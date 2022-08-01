@@ -1,0 +1,651 @@
+Setting: CELEBA_3
+Dataset: CelebA
+Shift type: confounder
+Target name: Wavy_Hair
+Confounder names: ['High_Cheekbones']
+Resume: False
+Minority fraction: None
+Imbalance ratio: None
+Fraction: 1.0
+Root dir: None
+Reweight groups: False
+Augment data: False
+Val fraction: 0.1
+Dog group: 4
+Truck group: 4
+Robust: False
+Alpha: 0.2
+Generalization adjustment: 0.0
+Automatic adjustment: False
+Robust step size: 0.01
+Use normalized loss: False
+Btl: False
+Hinge: False
+Model: resnet50
+Train from scratch: False
+Model kwargs: {}
+Diversify: True
+Head only: False
+Majority only: True
+Bn mode: train
+Heads: 2
+Mode: mi
+Reduction: mean
+Diversity weight: 100.0
+Reg mode: kl_backward
+Reg weight: 10.0
+Fixed label ratio: None
+N epochs: 10
+Batch size: 32
+Lr: 0.0001
+Optimizer: SGD
+Scheduler: None
+Weight decay: 0.0001
+Gamma: 0.1
+Minimum variational weight: 0
+Num warmup steps: 0
+In dist testing: False
+Seed: 2
+Log dir: ./logs/final_results_100-10
+Log every: 50
+Save step: 1000
+Save best: False
+Save last: False
+Save wrong: False
+Fold: None
+Num folds per sweep: 5
+Num sweeps: 4
+Wrong file: None
+Is featurizer: True
+Ratio: 0.8
+Step gamma: 0.96
+Group by label: False
+Exp string: CELEBA_3_div_h2_mi-mean-100.00_kl_backward-10.00_maj_bs32_lr0.0001_2
+Debug: False
+Start time: 2022-01-21 15:51:37.399791
+
+Training Data...
+    Wavy_Hair = 0, High_Cheekbones = 0: n = 64979
+    Wavy_Hair = 0, High_Cheekbones = 1: n = 45809
+    Wavy_Hair = 1, High_Cheekbones = 0: n = 24146
+    Wavy_Hair = 1, High_Cheekbones = 1: n = 27836
+Validation Data...
+    Wavy_Hair = 0, High_Cheekbones = 0: n = 8460
+    Wavy_Hair = 0, High_Cheekbones = 1: n = 5912
+    Wavy_Hair = 1, High_Cheekbones = 0: n = 2481
+    Wavy_Hair = 1, High_Cheekbones = 1: n = 3014
+Test Data...
+    Wavy_Hair = 0, High_Cheekbones = 0: n = 7126
+    Wavy_Hair = 0, High_Cheekbones = 1: n = 5569
+    Wavy_Hair = 1, High_Cheekbones = 0: n = 3218
+    Wavy_Hair = 1, High_Cheekbones = 1: n = 4049
+Elapsed: 00:00:30/03:48:26 Epoch 0 batch 50/2187	Avg acc 26.0, Worst acc 0.0
+Elapsed: 00:00:55/03:24:12 Epoch 0 batch 100/2187	Avg acc 27.2, Worst acc 0.0
+Elapsed: 00:01:19/03:14:04 Epoch 0 batch 150/2187	Avg acc 27.8, Worst acc 0.0
+Elapsed: 00:01:43/03:08:58 Epoch 0 batch 200/2187	Avg acc 31.7, Worst acc 0.0
+Elapsed: 00:02:10/03:10:23 Epoch 0 batch 250/2187	Avg acc 30.5, Worst acc 0.0
+Elapsed: 00:02:36/03:10:48 Epoch 0 batch 300/2187	Avg acc 32.9, Worst acc 0.0
+Elapsed: 00:03:01/03:09:44 Epoch 0 batch 350/2187	Avg acc 30.1, Worst acc 0.0
+Elapsed: 00:03:28/03:10:18 Epoch 0 batch 400/2187	Avg acc 34.2, Worst acc 0.0
+Elapsed: 00:03:53/03:09:21 Epoch 0 batch 450/2187	Avg acc 33.1, Worst acc 0.0
+Elapsed: 00:04:18/03:09:06 Epoch 0 batch 500/2187	Avg acc 35.9, Worst acc 0.0
+Elapsed: 00:04:45/03:09:38 Epoch 0 batch 550/2187	Avg acc 35.5, Worst acc 0.0
+Elapsed: 00:05:11/03:09:48 Epoch 0 batch 600/2187	Avg acc 38.8, Worst acc 0.0
+Elapsed: 00:05:36/03:08:45 Epoch 0 batch 650/2187	Avg acc 38.0, Worst acc 0.0
+Elapsed: 00:05:58/03:06:57 Epoch 0 batch 700/2187	Avg acc 38.9, Worst acc 0.0
+Elapsed: 00:06:19/03:04:53 Epoch 0 batch 750/2187	Avg acc 38.8, Worst acc 0.0
+Elapsed: 00:06:42/03:03:32 Epoch 0 batch 800/2187	Avg acc 39.7, Worst acc 0.0
+Elapsed: 00:07:05/03:02:49 Epoch 0 batch 850/2187	Avg acc 39.7, Worst acc 0.0
+Elapsed: 00:07:30/03:02:30 Epoch 0 batch 900/2187	Avg acc 40.3, Worst acc 0.0
+Elapsed: 00:07:52/03:01:23 Epoch 0 batch 950/2187	Avg acc 41.3, Worst acc 0.0
+Elapsed: 00:08:14/03:00:22 Epoch 0 batch 1000/2187	Avg acc 41.6, Worst acc 0.0
+Elapsed: 00:08:37/02:59:55 Epoch 0 batch 1050/2187	Avg acc 40.5, Worst acc 0.0
+Elapsed: 00:09:01/02:59:31 Epoch 0 batch 1100/2187	Avg acc 41.7, Worst acc 0.0
+Elapsed: 00:09:23/02:58:53 Epoch 0 batch 1150/2187	Avg acc 41.2, Worst acc 0.0
+Elapsed: 00:09:46/02:58:16 Epoch 0 batch 1200/2187	Avg acc 41.6, Worst acc 0.0
+Elapsed: 00:10:09/02:57:44 Epoch 0 batch 1250/2187	Avg acc 41.9, Worst acc 0.0
+Elapsed: 00:10:35/02:58:22 Epoch 0 batch 1300/2187	Avg acc 43.0, Worst acc 0.0
+Elapsed: 00:10:58/02:58:00 Epoch 0 batch 1350/2187	Avg acc 42.0, Worst acc 0.0
+Elapsed: 00:11:23/02:58:07 Epoch 0 batch 1400/2187	Avg acc 41.9, Worst acc 0.0
+Elapsed: 00:11:48/02:58:10 Epoch 0 batch 1450/2187	Avg acc 41.7, Worst acc 0.0
+Elapsed: 00:12:10/02:57:38 Epoch 0 batch 1500/2187	Avg acc 42.1, Worst acc 0.0
+Elapsed: 00:12:34/02:57:32 Epoch 0 batch 1550/2187	Avg acc 43.6, Worst acc 0.0
+Elapsed: 00:12:57/02:57:12 Epoch 0 batch 1600/2187	Avg acc 43.1, Worst acc 0.0
+Elapsed: 00:13:20/02:56:51 Epoch 0 batch 1650/2187	Avg acc 42.6, Worst acc 0.0
+Elapsed: 00:13:44/02:56:56 Epoch 0 batch 1700/2187	Avg acc 42.9, Worst acc 0.0
+Elapsed: 00:14:07/02:56:35 Epoch 0 batch 1750/2187	Avg acc 42.0, Worst acc 0.0
+Elapsed: 00:14:31/02:56:29 Epoch 0 batch 1800/2187	Avg acc 43.4, Worst acc 0.0
+Elapsed: 00:14:53/02:56:13 Epoch 0 batch 1850/2187	Avg acc 43.5, Worst acc 0.0
+Elapsed: 00:15:21/02:56:52 Epoch 0 batch 1900/2187	Avg acc 43.4, Worst acc 0.0
+Elapsed: 00:15:45/02:56:51 Epoch 0 batch 1950/2187	Avg acc 43.2, Worst acc 0.0
+Elapsed: 00:16:10/02:56:55 Epoch 0 batch 2000/2187	Avg acc 43.2, Worst acc 0.0
+Elapsed: 00:16:33/02:56:48 Epoch 0 batch 2050/2187	Avg acc 43.9, Worst acc 0.0
+Elapsed: 00:16:57/02:56:38 Epoch 0 batch 2100/2187	Avg acc 43.6, Worst acc 0.0
+Elapsed: 00:17:18/02:56:12 Epoch 0 batch 2150/2187	Avg acc 44.0, Worst acc 0.0
+
+Epoch 0, Validation:
+Elapsed: 00:18:58/03:10:07 Epoch 0 batch 621/621	Avg acc 65.3, Worst acc 25.1
+N=12 0.5854165130108595 0.21119441360235214
+N=120 0.5833601979911327 0.2099933570623398
+N=600 0.5689659928530455 0.20158596128225326
+
+Epoch 0, Testing:
+Elapsed: 00:20:28/03:25:02 Epoch 0 batch 624/624	Avg acc 64.9, Worst acc 22.6
+N=12 0.6109929461032152 0.20572983473539352
+N=120 0.6008805880695581 0.20039518922567368
+N=600 0.6168918216228485 0.2088417112827301
+Current lr: 0.000100
+
+Elapsed: 00:20:54/03:24:31 Epoch 1 batch 50/2187	Avg acc 44.3, Worst acc 0.0
+Elapsed: 00:21:19/03:24:01 Epoch 1 batch 100/2187	Avg acc 44.0, Worst acc 0.0
+Elapsed: 00:21:47/03:23:59 Epoch 1 batch 150/2187	Avg acc 43.6, Worst acc 0.0
+Elapsed: 00:22:16/03:24:10 Epoch 1 batch 200/2187	Avg acc 43.7, Worst acc 0.0
+Elapsed: 00:22:41/03:23:45 Epoch 1 batch 250/2187	Avg acc 44.7, Worst acc 0.0
+Elapsed: 00:23:06/03:23:17 Epoch 1 batch 300/2187	Avg acc 43.7, Worst acc 0.0
+Elapsed: 00:23:33/03:23:06 Epoch 1 batch 350/2187	Avg acc 44.3, Worst acc 0.0
+Elapsed: 00:23:58/03:22:41 Epoch 1 batch 400/2187	Avg acc 44.2, Worst acc 0.0
+Elapsed: 00:24:24/03:22:28 Epoch 1 batch 450/2187	Avg acc 43.5, Worst acc 0.0
+Elapsed: 00:24:50/03:22:16 Epoch 1 batch 500/2187	Avg acc 42.9, Worst acc 0.0
+Elapsed: 00:25:18/03:22:18 Epoch 1 batch 550/2187	Avg acc 44.2, Worst acc 0.0
+Elapsed: 00:25:47/03:22:26 Epoch 1 batch 600/2187	Avg acc 43.8, Worst acc 0.0
+Elapsed: 00:26:17/03:22:42 Epoch 1 batch 650/2187	Avg acc 44.3, Worst acc 0.0
+Elapsed: 00:26:42/03:22:21 Epoch 1 batch 700/2187	Avg acc 43.9, Worst acc 0.0
+Elapsed: 00:27:07/03:22:01 Epoch 1 batch 750/2187	Avg acc 43.8, Worst acc 0.0
+Elapsed: 00:27:33/03:21:53 Epoch 1 batch 800/2187	Avg acc 44.7, Worst acc 0.0
+Elapsed: 00:28:02/03:21:57 Epoch 1 batch 850/2187	Avg acc 44.5, Worst acc 0.0
+Elapsed: 00:28:24/03:21:19 Epoch 1 batch 900/2187	Avg acc 44.5, Worst acc 0.0
+Elapsed: 00:28:49/03:21:02 Epoch 1 batch 950/2187	Avg acc 44.4, Worst acc 0.0
+Elapsed: 00:29:12/03:20:32 Epoch 1 batch 1000/2187	Avg acc 43.9, Worst acc 0.0
+Elapsed: 00:29:35/03:20:00 Epoch 1 batch 1050/2187	Avg acc 44.4, Worst acc 0.0
+Elapsed: 00:29:58/03:19:30 Epoch 1 batch 1100/2187	Avg acc 44.3, Worst acc 0.0
+Elapsed: 00:30:22/03:19:09 Epoch 1 batch 1150/2187	Avg acc 43.8, Worst acc 0.0
+Elapsed: 00:30:44/03:18:35 Epoch 1 batch 1200/2187	Avg acc 44.1, Worst acc 0.0
+Elapsed: 00:31:07/03:18:08 Epoch 1 batch 1250/2187	Avg acc 43.7, Worst acc 0.0
+Elapsed: 00:31:29/03:17:37 Epoch 1 batch 1300/2187	Avg acc 44.8, Worst acc 0.0
+Elapsed: 00:31:53/03:17:12 Epoch 1 batch 1350/2187	Avg acc 44.5, Worst acc 0.0
+Elapsed: 00:32:15/03:16:47 Epoch 1 batch 1400/2187	Avg acc 44.2, Worst acc 0.0
+Elapsed: 00:32:38/03:16:22 Epoch 1 batch 1450/2187	Avg acc 44.3, Worst acc 0.0
+Elapsed: 00:33:02/03:16:00 Epoch 1 batch 1500/2187	Avg acc 44.3, Worst acc 0.0
+Elapsed: 00:33:25/03:15:42 Epoch 1 batch 1550/2187	Avg acc 44.7, Worst acc 0.0
+Elapsed: 00:33:50/03:15:31 Epoch 1 batch 1600/2187	Avg acc 44.7, Worst acc 0.0
+Elapsed: 00:34:13/03:15:07 Epoch 1 batch 1650/2187	Avg acc 43.7, Worst acc 0.0
+Elapsed: 00:34:34/03:14:36 Epoch 1 batch 1700/2187	Avg acc 44.4, Worst acc 0.0
+Elapsed: 00:34:56/03:14:06 Epoch 1 batch 1750/2187	Avg acc 43.8, Worst acc 0.0
+Elapsed: 00:35:17/03:13:38 Epoch 1 batch 1800/2187	Avg acc 45.4, Worst acc 0.0
+Elapsed: 00:35:39/03:13:14 Epoch 1 batch 1850/2187	Avg acc 45.1, Worst acc 0.0
+Elapsed: 00:36:00/03:12:45 Epoch 1 batch 1900/2187	Avg acc 44.3, Worst acc 0.0
+Elapsed: 00:36:22/03:12:21 Epoch 1 batch 1950/2187	Avg acc 44.4, Worst acc 0.0
+Elapsed: 00:36:44/03:11:57 Epoch 1 batch 2000/2187	Avg acc 44.1, Worst acc 0.0
+Elapsed: 00:37:07/03:11:41 Epoch 1 batch 2050/2187	Avg acc 43.4, Worst acc 0.0
+Elapsed: 00:37:30/03:11:24 Epoch 1 batch 2100/2187	Avg acc 43.7, Worst acc 0.0
+Elapsed: 00:37:53/03:11:05 Epoch 1 batch 2150/2187	Avg acc 43.7, Worst acc 0.0
+
+Epoch 1, Validation:
+Elapsed: 00:39:37/03:18:17 Epoch 1 batch 621/621	Avg acc 65.1, Worst acc 39.7
+N=12 0.6400120683014393 0.36126416772603986
+N=120 0.6354242710769177 0.3879198530316353
+N=600 0.6338361874222755 0.3971468210220337
+
+Epoch 1, Testing:
+Elapsed: 00:41:09/03:25:58 Epoch 1 batch 624/624	Avg acc 65.4, Worst acc 34.6
+N=12 0.6423148709535599 0.3238456064462662
+N=120 0.6410195237398147 0.3302669483423233
+N=600 0.6387526661157608 0.34150429666042326
+Current lr: 0.000100
+
+Elapsed: 00:41:34/03:25:32 Epoch 2 batch 50/2187	Avg acc 44.9, Worst acc 0.0
+Elapsed: 00:41:57/03:25:10 Epoch 2 batch 100/2187	Avg acc 44.2, Worst acc 0.0
+Elapsed: 00:42:23/03:24:56 Epoch 2 batch 150/2187	Avg acc 44.1, Worst acc 0.0
+Elapsed: 00:42:53/03:25:06 Epoch 2 batch 200/2187	Avg acc 43.9, Worst acc 0.0
+Elapsed: 00:43:23/03:25:17 Epoch 2 batch 250/2187	Avg acc 42.0, Worst acc 0.0
+Elapsed: 00:43:52/03:25:20 Epoch 2 batch 300/2187	Avg acc 42.9, Worst acc 0.0
+Elapsed: 00:44:19/03:25:13 Epoch 2 batch 350/2187	Avg acc 43.6, Worst acc 0.0
+Elapsed: 00:44:45/03:25:06 Epoch 2 batch 400/2187	Avg acc 43.3, Worst acc 0.0
+Elapsed: 00:45:16/03:25:18 Epoch 2 batch 450/2187	Avg acc 44.2, Worst acc 0.0
+Elapsed: 00:45:43/03:25:12 Epoch 2 batch 500/2187	Avg acc 43.7, Worst acc 0.0
+Elapsed: 00:46:09/03:25:03 Epoch 2 batch 550/2187	Avg acc 44.9, Worst acc 0.0
+Elapsed: 00:46:37/03:25:03 Epoch 2 batch 600/2187	Avg acc 44.3, Worst acc 0.0
+Elapsed: 00:47:03/03:24:54 Epoch 2 batch 650/2187	Avg acc 45.5, Worst acc 0.0
+Elapsed: 00:47:27/03:24:35 Epoch 2 batch 700/2187	Avg acc 44.8, Worst acc 0.0
+Elapsed: 00:47:54/03:24:29 Epoch 2 batch 750/2187	Avg acc 44.3, Worst acc 0.0
+Elapsed: 00:48:17/03:24:08 Epoch 2 batch 800/2187	Avg acc 42.7, Worst acc 0.0
+Elapsed: 00:48:41/03:23:51 Epoch 2 batch 850/2187	Avg acc 44.5, Worst acc 0.0
+Elapsed: 00:49:03/03:23:28 Epoch 2 batch 900/2187	Avg acc 44.6, Worst acc 0.0
+Elapsed: 00:49:28/03:23:17 Epoch 2 batch 950/2187	Avg acc 44.9, Worst acc 0.0
+Elapsed: 00:49:55/03:23:11 Epoch 2 batch 1000/2187	Avg acc 44.2, Worst acc 0.0
+Elapsed: 00:50:18/03:22:54 Epoch 2 batch 1050/2187	Avg acc 43.9, Worst acc 0.0
+Elapsed: 00:50:41/03:22:33 Epoch 2 batch 1100/2187	Avg acc 44.5, Worst acc 0.0
+Elapsed: 00:51:06/03:22:21 Epoch 2 batch 1150/2187	Avg acc 44.9, Worst acc 0.0
+Elapsed: 00:51:31/03:22:11 Epoch 2 batch 1200/2187	Avg acc 44.1, Worst acc 0.0
+Elapsed: 00:51:52/03:21:46 Epoch 2 batch 1250/2187	Avg acc 44.1, Worst acc 0.0
+Elapsed: 00:52:15/03:21:26 Epoch 2 batch 1300/2187	Avg acc 45.0, Worst acc 0.0
+Elapsed: 00:52:37/03:21:04 Epoch 2 batch 1350/2187	Avg acc 44.9, Worst acc 0.0
+Elapsed: 00:52:58/03:20:41 Epoch 2 batch 1400/2187	Avg acc 45.1, Worst acc 0.0
+Elapsed: 00:53:19/03:20:17 Epoch 2 batch 1450/2187	Avg acc 44.2, Worst acc 0.0
+Elapsed: 00:53:41/03:19:55 Epoch 2 batch 1500/2187	Avg acc 43.6, Worst acc 0.0
+Elapsed: 00:54:03/03:19:37 Epoch 2 batch 1550/2187	Avg acc 44.8, Worst acc 0.0
+Elapsed: 00:54:25/03:19:17 Epoch 2 batch 1600/2187	Avg acc 44.9, Worst acc 0.0
+Elapsed: 00:54:48/03:19:01 Epoch 2 batch 1650/2187	Avg acc 44.1, Worst acc 0.0
+Elapsed: 00:55:11/03:18:43 Epoch 2 batch 1700/2187	Avg acc 44.7, Worst acc 0.0
+Elapsed: 00:55:32/03:18:24 Epoch 2 batch 1750/2187	Avg acc 44.1, Worst acc 0.0
+Elapsed: 00:55:55/03:18:08 Epoch 2 batch 1800/2187	Avg acc 44.4, Worst acc 0.0
+Elapsed: 00:56:20/03:17:58 Epoch 2 batch 1850/2187	Avg acc 44.7, Worst acc 0.0
+Elapsed: 00:56:42/03:17:41 Epoch 2 batch 1900/2187	Avg acc 44.6, Worst acc 0.0
+Elapsed: 00:57:04/03:17:23 Epoch 2 batch 1950/2187	Avg acc 43.8, Worst acc 0.0
+Elapsed: 00:57:26/03:17:06 Epoch 2 batch 2000/2187	Avg acc 43.2, Worst acc 0.0
+Elapsed: 00:57:47/03:16:47 Epoch 2 batch 2050/2187	Avg acc 44.0, Worst acc 0.0
+Elapsed: 00:58:10/03:16:32 Epoch 2 batch 2100/2187	Avg acc 44.1, Worst acc 0.0
+Elapsed: 00:58:33/03:16:20 Epoch 2 batch 2150/2187	Avg acc 45.2, Worst acc 0.0
+
+Epoch 2, Validation:
+Elapsed: 01:00:27/03:21:37 Epoch 2 batch 621/621	Avg acc 68.0, Worst acc 49.4
+N=12 0.6681032729148865 0.44053071320056914
+N=120 0.6786392259597779 0.48783902943134305
+N=600 0.6799562200903893 0.4937525689601898
+
+Epoch 2, Testing:
+Elapsed: 01:02:03/03:26:58 Epoch 2 batch 624/624	Avg acc 68.1, Worst acc 48.9
+N=12 0.6723952120542527 0.4415510106086731
+N=120 0.6785593071952463 0.4741788037121296
+N=600 0.6813611686229706 0.4890096187591553
+Current lr: 0.000100
+
+Elapsed: 01:02:29/03:26:44 Epoch 3 batch 50/2187	Avg acc 44.6, Worst acc 0.0
+Elapsed: 01:02:54/03:26:35 Epoch 3 batch 100/2187	Avg acc 43.9, Worst acc 0.0
+Elapsed: 01:03:21/03:26:29 Epoch 3 batch 150/2187	Avg acc 44.4, Worst acc 0.0
+Elapsed: 01:03:47/03:26:23 Epoch 3 batch 200/2187	Avg acc 41.0, Worst acc 0.0
+Elapsed: 01:04:16/03:26:24 Epoch 3 batch 250/2187	Avg acc 43.1, Worst acc 0.0
+Elapsed: 01:04:42/03:26:18 Epoch 3 batch 300/2187	Avg acc 43.6, Worst acc 0.0
+Elapsed: 01:05:10/03:26:18 Epoch 3 batch 350/2187	Avg acc 43.9, Worst acc 0.0
+Elapsed: 01:05:35/03:26:07 Epoch 3 batch 400/2187	Avg acc 44.0, Worst acc 0.0
+Elapsed: 01:06:05/03:26:11 Epoch 3 batch 450/2187	Avg acc 43.4, Worst acc 0.0
+Elapsed: 01:06:30/03:26:01 Epoch 3 batch 500/2187	Avg acc 43.6, Worst acc 0.0
+Elapsed: 01:06:57/03:25:58 Epoch 3 batch 550/2187	Avg acc 44.8, Worst acc 0.0
+Elapsed: 01:07:26/03:26:00 Epoch 3 batch 600/2187	Avg acc 44.6, Worst acc 0.0
+Elapsed: 01:07:53/03:25:55 Epoch 3 batch 650/2187	Avg acc 44.1, Worst acc 0.0
+Elapsed: 01:08:19/03:25:49 Epoch 3 batch 700/2187	Avg acc 44.3, Worst acc 0.0
+Elapsed: 01:08:43/03:25:36 Epoch 3 batch 750/2187	Avg acc 43.4, Worst acc 0.0
+Elapsed: 01:09:05/03:25:16 Epoch 3 batch 800/2187	Avg acc 44.4, Worst acc 0.0
+Elapsed: 01:09:27/03:24:58 Epoch 3 batch 850/2187	Avg acc 43.9, Worst acc 0.0
+Elapsed: 01:09:48/03:24:40 Epoch 3 batch 900/2187	Avg acc 43.2, Worst acc 0.0
+Elapsed: 01:10:10/03:24:22 Epoch 3 batch 950/2187	Avg acc 44.3, Worst acc 0.0
+Elapsed: 01:10:33/03:24:06 Epoch 3 batch 1000/2187	Avg acc 44.3, Worst acc 0.0
+Elapsed: 01:10:56/03:23:52 Epoch 3 batch 1050/2187	Avg acc 44.6, Worst acc 0.0
+Elapsed: 01:11:18/03:23:34 Epoch 3 batch 1100/2187	Avg acc 44.0, Worst acc 0.0
+Elapsed: 01:11:42/03:23:23 Epoch 3 batch 1150/2187	Avg acc 44.7, Worst acc 0.0
+Elapsed: 01:12:07/03:23:17 Epoch 3 batch 1200/2187	Avg acc 44.6, Worst acc 0.0
+Elapsed: 01:12:30/03:23:03 Epoch 3 batch 1250/2187	Avg acc 44.2, Worst acc 0.0
+Elapsed: 01:12:53/03:22:48 Epoch 3 batch 1300/2187	Avg acc 44.7, Worst acc 0.0
+Elapsed: 01:13:16/03:22:34 Epoch 3 batch 1350/2187	Avg acc 43.7, Worst acc 0.0
+Elapsed: 01:13:38/03:22:20 Epoch 3 batch 1400/2187	Avg acc 45.0, Worst acc 0.0
+Elapsed: 01:14:00/03:22:04 Epoch 3 batch 1450/2187	Avg acc 45.4, Worst acc 0.0
+Elapsed: 01:14:26/03:21:58 Epoch 3 batch 1500/2187	Avg acc 44.9, Worst acc 0.0
+Elapsed: 01:14:49/03:21:46 Epoch 3 batch 1550/2187	Avg acc 45.1, Worst acc 0.0
+Elapsed: 01:15:12/03:21:34 Epoch 3 batch 1600/2187	Avg acc 45.3, Worst acc 0.0
+Elapsed: 01:15:35/03:21:21 Epoch 3 batch 1650/2187	Avg acc 44.6, Worst acc 0.0
+Elapsed: 01:15:57/03:21:06 Epoch 3 batch 1700/2187	Avg acc 44.2, Worst acc 0.0
+Elapsed: 01:16:19/03:20:51 Epoch 3 batch 1750/2187	Avg acc 44.0, Worst acc 0.0
+Elapsed: 01:16:40/03:20:35 Epoch 3 batch 1800/2187	Avg acc 44.0, Worst acc 0.0
+Elapsed: 01:17:03/03:20:24 Epoch 3 batch 1850/2187	Avg acc 44.6, Worst acc 0.0
+Elapsed: 01:17:27/03:20:13 Epoch 3 batch 1900/2187	Avg acc 44.9, Worst acc 0.0
+Elapsed: 01:17:49/03:19:59 Epoch 3 batch 1950/2187	Avg acc 44.5, Worst acc 0.0
+Elapsed: 01:18:13/03:19:51 Epoch 3 batch 2000/2187	Avg acc 44.6, Worst acc 0.0
+Elapsed: 01:18:39/03:19:48 Epoch 3 batch 2050/2187	Avg acc 44.6, Worst acc 0.0
+Elapsed: 01:19:05/03:19:43 Epoch 3 batch 2100/2187	Avg acc 43.9, Worst acc 0.0
+Elapsed: 01:19:26/03:19:28 Epoch 3 batch 2150/2187	Avg acc 44.5, Worst acc 0.0
+
+Epoch 3, Validation:
+Elapsed: 01:21:30/03:23:50 Epoch 3 batch 621/621	Avg acc 72.9, Worst acc 57.4
+N=12 0.7188064638897776 0.5427226714789868
+N=120 0.7292587608098984 0.5735585689544678
+N=600 0.7292587608098984 0.5735585689544678
+
+Epoch 3, Testing:
+Elapsed: 01:23:13/03:28:07 Epoch 3 batch 624/624	Avg acc 73.3, Worst acc 57.7
+N=12 0.7147071706503629 0.5189358115196228
+N=120 0.7328361421823502 0.5770663022994995
+N=600 0.7328361421823502 0.5770663022994995
+Current lr: 0.000100
+
+Elapsed: 01:23:44/03:28:11 Epoch 4 batch 50/2187	Avg acc 44.8, Worst acc 0.0
+Elapsed: 01:24:12/03:28:09 Epoch 4 batch 100/2187	Avg acc 44.7, Worst acc 0.0
+Elapsed: 01:24:47/03:28:26 Epoch 4 batch 150/2187	Avg acc 44.6, Worst acc 0.0
+Elapsed: 01:25:22/03:28:41 Epoch 4 batch 200/2187	Avg acc 43.9, Worst acc 0.0
+Elapsed: 01:25:49/03:28:37 Epoch 4 batch 250/2187	Avg acc 43.3, Worst acc 0.0
+Elapsed: 01:26:15/03:28:30 Epoch 4 batch 300/2187	Avg acc 44.3, Worst acc 0.0
+Elapsed: 01:26:40/03:28:22 Epoch 4 batch 350/2187	Avg acc 44.7, Worst acc 0.0
+Elapsed: 01:27:05/03:28:12 Epoch 4 batch 400/2187	Avg acc 43.5, Worst acc 0.0
+Elapsed: 01:27:31/03:28:07 Epoch 4 batch 450/2187	Avg acc 43.2, Worst acc 0.0
+Elapsed: 01:27:55/03:27:57 Epoch 4 batch 500/2187	Avg acc 43.7, Worst acc 0.0
+Elapsed: 01:28:19/03:27:46 Epoch 4 batch 550/2187	Avg acc 45.3, Worst acc 0.0
+Elapsed: 01:28:43/03:27:36 Epoch 4 batch 600/2187	Avg acc 44.3, Worst acc 0.0
+Elapsed: 01:29:07/03:27:25 Epoch 4 batch 650/2187	Avg acc 44.9, Worst acc 0.0
+Elapsed: 01:29:30/03:27:12 Epoch 4 batch 700/2187	Avg acc 44.5, Worst acc 0.0
+Elapsed: 01:29:53/03:27:01 Epoch 4 batch 750/2187	Avg acc 44.5, Worst acc 0.0
+Elapsed: 01:30:16/03:26:48 Epoch 4 batch 800/2187	Avg acc 44.6, Worst acc 0.0
+Elapsed: 01:30:39/03:26:34 Epoch 4 batch 850/2187	Avg acc 45.3, Worst acc 0.0
+Elapsed: 01:31:01/03:26:21 Epoch 4 batch 900/2187	Avg acc 43.7, Worst acc 0.0
+Elapsed: 01:31:25/03:26:10 Epoch 4 batch 950/2187	Avg acc 44.4, Worst acc 0.0
+Elapsed: 01:31:47/03:25:56 Epoch 4 batch 1000/2187	Avg acc 43.4, Worst acc 0.0
+Elapsed: 01:32:08/03:25:41 Epoch 4 batch 1050/2187	Avg acc 44.2, Worst acc 0.0
+Elapsed: 01:32:30/03:25:27 Epoch 4 batch 1100/2187	Avg acc 43.3, Worst acc 0.0
+Elapsed: 01:32:54/03:25:17 Epoch 4 batch 1150/2187	Avg acc 43.0, Worst acc 0.0
+Elapsed: 01:33:15/03:25:03 Epoch 4 batch 1200/2187	Avg acc 43.7, Worst acc 0.0
+Elapsed: 01:33:39/03:24:54 Epoch 4 batch 1250/2187	Avg acc 44.6, Worst acc 0.0
+Elapsed: 01:34:01/03:24:40 Epoch 4 batch 1300/2187	Avg acc 44.3, Worst acc 0.0
+Elapsed: 01:34:27/03:24:34 Epoch 4 batch 1350/2187	Avg acc 43.6, Worst acc 0.0
+Elapsed: 01:34:48/03:24:20 Epoch 4 batch 1400/2187	Avg acc 44.2, Worst acc 0.0
+Elapsed: 01:35:13/03:24:14 Epoch 4 batch 1450/2187	Avg acc 44.2, Worst acc 0.0
+Elapsed: 01:35:44/03:24:19 Epoch 4 batch 1500/2187	Avg acc 44.0, Worst acc 0.0
+Elapsed: 01:36:10/03:24:15 Epoch 4 batch 1550/2187	Avg acc 43.5, Worst acc 0.0
+Elapsed: 01:36:34/03:24:07 Epoch 4 batch 1600/2187	Avg acc 44.1, Worst acc 0.0
+Elapsed: 01:36:57/03:23:57 Epoch 4 batch 1650/2187	Avg acc 44.4, Worst acc 0.0
+Elapsed: 01:37:21/03:23:48 Epoch 4 batch 1700/2187	Avg acc 43.7, Worst acc 0.0
+Elapsed: 01:37:47/03:23:44 Epoch 4 batch 1750/2187	Avg acc 44.1, Worst acc 0.0
+Elapsed: 01:38:12/03:23:38 Epoch 4 batch 1800/2187	Avg acc 45.3, Worst acc 0.0
+Elapsed: 01:38:35/03:23:28 Epoch 4 batch 1850/2187	Avg acc 45.3, Worst acc 0.0
+Elapsed: 01:39:00/03:23:22 Epoch 4 batch 1900/2187	Avg acc 43.7, Worst acc 0.0
+Elapsed: 01:39:27/03:23:19 Epoch 4 batch 1950/2187	Avg acc 44.1, Worst acc 0.0
+Elapsed: 01:39:50/03:23:11 Epoch 4 batch 2000/2187	Avg acc 43.7, Worst acc 0.0
+Elapsed: 01:40:18/03:23:10 Epoch 4 batch 2050/2187	Avg acc 44.6, Worst acc 0.0
+Elapsed: 01:40:42/03:23:02 Epoch 4 batch 2100/2187	Avg acc 45.0, Worst acc 0.0
+Elapsed: 01:41:08/03:22:58 Epoch 4 batch 2150/2187	Avg acc 44.6, Worst acc 0.0
+
+Epoch 4, Validation:
+Elapsed: 01:43:08/03:26:20 Epoch 4 batch 621/621	Avg acc 67.5, Worst acc 39.1
+N=12 0.662618533372879 0.3459872889518738
+N=120 0.6748763620853424 0.3909713625907898
+N=600 0.6748763620853424 0.3909713625907898
+
+Epoch 4, Testing:
+Elapsed: 01:44:34/03:29:13 Epoch 4 batch 624/624	Avg acc 67.5, Worst acc 41.7
+N=12 0.6658055869862437 0.37062719389796256
+N=120 0.674411701746285 0.4139359851181507
+N=600 0.675026424229145 0.417029470205307
+Current lr: 0.000100
+
+Elapsed: 01:44:58/03:29:01 Epoch 5 batch 50/2187	Avg acc 44.9, Worst acc 0.0
+Elapsed: 01:45:23/03:28:53 Epoch 5 batch 100/2187	Avg acc 44.4, Worst acc 0.0
+Elapsed: 01:45:47/03:28:44 Epoch 5 batch 150/2187	Avg acc 44.2, Worst acc 0.0
+Elapsed: 01:46:11/03:28:36 Epoch 5 batch 200/2187	Avg acc 45.5, Worst acc 0.0
+Elapsed: 01:46:36/03:28:28 Epoch 5 batch 250/2187	Avg acc 44.7, Worst acc 0.0
+Elapsed: 01:47:00/03:28:19 Epoch 5 batch 300/2187	Avg acc 44.7, Worst acc 0.0
+Elapsed: 01:47:25/03:28:12 Epoch 5 batch 350/2187	Avg acc 45.3, Worst acc 0.0
+Elapsed: 01:47:50/03:28:04 Epoch 5 batch 400/2187	Avg acc 44.5, Worst acc 0.0
+Elapsed: 01:48:16/03:28:00 Epoch 5 batch 450/2187	Avg acc 45.3, Worst acc 0.0
+Elapsed: 01:48:41/03:27:53 Epoch 5 batch 500/2187	Avg acc 44.6, Worst acc 0.0
+Elapsed: 01:49:05/03:27:45 Epoch 5 batch 550/2187	Avg acc 44.3, Worst acc 0.0
+Elapsed: 01:49:30/03:27:39 Epoch 5 batch 600/2187	Avg acc 44.8, Worst acc 0.0
+Elapsed: 01:49:53/03:27:28 Epoch 5 batch 650/2187	Avg acc 45.0, Worst acc 0.0
+Elapsed: 01:50:15/03:27:16 Epoch 5 batch 700/2187	Avg acc 44.9, Worst acc 0.0
+Elapsed: 01:50:38/03:27:06 Epoch 5 batch 750/2187	Avg acc 45.0, Worst acc 0.0
+Elapsed: 01:51:02/03:26:56 Epoch 5 batch 800/2187	Avg acc 45.4, Worst acc 0.0
+Elapsed: 01:51:25/03:26:47 Epoch 5 batch 850/2187	Avg acc 44.4, Worst acc 0.0
+Elapsed: 01:51:48/03:26:38 Epoch 5 batch 900/2187	Avg acc 43.8, Worst acc 0.0
+Elapsed: 01:52:14/03:26:33 Epoch 5 batch 950/2187	Avg acc 44.8, Worst acc 0.0
+Elapsed: 01:52:39/03:26:28 Epoch 5 batch 1000/2187	Avg acc 45.0, Worst acc 0.0
+Elapsed: 01:53:06/03:26:24 Epoch 5 batch 1050/2187	Avg acc 45.3, Worst acc 0.0
+Elapsed: 01:53:31/03:26:19 Epoch 5 batch 1100/2187	Avg acc 45.0, Worst acc 0.0
+Elapsed: 01:53:53/03:26:07 Epoch 5 batch 1150/2187	Avg acc 44.4, Worst acc 0.0
+Elapsed: 01:54:15/03:25:55 Epoch 5 batch 1200/2187	Avg acc 44.6, Worst acc 0.0
+Elapsed: 01:54:39/03:25:49 Epoch 5 batch 1250/2187	Avg acc 44.6, Worst acc 0.0
+Elapsed: 01:55:01/03:25:37 Epoch 5 batch 1300/2187	Avg acc 44.7, Worst acc 0.0
+Elapsed: 01:55:25/03:25:29 Epoch 5 batch 1350/2187	Avg acc 44.8, Worst acc 0.0
+Elapsed: 01:55:48/03:25:21 Epoch 5 batch 1400/2187	Avg acc 44.9, Worst acc 0.0
+Elapsed: 01:56:16/03:25:19 Epoch 5 batch 1450/2187	Avg acc 44.9, Worst acc 0.0
+Elapsed: 01:56:39/03:25:11 Epoch 5 batch 1500/2187	Avg acc 43.9, Worst acc 0.0
+Elapsed: 01:57:02/03:25:03 Epoch 5 batch 1550/2187	Avg acc 44.3, Worst acc 0.0
+Elapsed: 01:57:27/03:24:56 Epoch 5 batch 1600/2187	Avg acc 43.1, Worst acc 0.0
+Elapsed: 01:57:50/03:24:47 Epoch 5 batch 1650/2187	Avg acc 44.7, Worst acc 0.0
+Elapsed: 01:58:17/03:24:46 Epoch 5 batch 1700/2187	Avg acc 44.4, Worst acc 0.0
+Elapsed: 01:58:41/03:24:38 Epoch 5 batch 1750/2187	Avg acc 44.0, Worst acc 0.0
+Elapsed: 01:59:06/03:24:33 Epoch 5 batch 1800/2187	Avg acc 44.1, Worst acc 0.0
+Elapsed: 01:59:29/03:24:25 Epoch 5 batch 1850/2187	Avg acc 43.4, Worst acc 0.0
+Elapsed: 01:59:57/03:24:24 Epoch 5 batch 1900/2187	Avg acc 44.4, Worst acc 0.0
+Elapsed: 02:00:21/03:24:18 Epoch 5 batch 1950/2187	Avg acc 44.9, Worst acc 0.0
+Elapsed: 02:00:45/03:24:11 Epoch 5 batch 2000/2187	Avg acc 44.5, Worst acc 0.0
+Elapsed: 02:01:06/03:23:59 Epoch 5 batch 2050/2187	Avg acc 44.8, Worst acc 0.0
+Elapsed: 02:01:27/03:23:48 Epoch 5 batch 2100/2187	Avg acc 44.9, Worst acc 0.0
+Elapsed: 02:01:49/03:23:38 Epoch 5 batch 2150/2187	Avg acc 44.6, Worst acc 0.0
+
+Epoch 5, Validation:
+Elapsed: 02:03:30/03:25:54 Epoch 5 batch 621/621	Avg acc 77.3, Worst acc 66.0
+N=12 0.7368731433153153 0.560058696269989
+N=120 0.7733284085988998 0.6596925258636475
+N=600 0.7733284085988998 0.6596925258636475
+
+Epoch 5, Testing:
+Elapsed: 02:05:00/03:28:23 Epoch 5 batch 624/624	Avg acc 76.8, Worst acc 66.8
+N=12 0.7488755574636161 0.6068838071078062
+N=120 0.7677210718393326 0.6678199172019958
+N=600 0.7677210718393326 0.6678199172019958
+Current lr: 0.000100
+
+Elapsed: 02:05:25/03:28:15 Epoch 6 batch 50/2187	Avg acc 44.0, Worst acc 0.0
+Elapsed: 02:05:49/03:28:09 Epoch 6 batch 100/2187	Avg acc 44.3, Worst acc 0.0
+Elapsed: 02:06:14/03:28:02 Epoch 6 batch 150/2187	Avg acc 44.7, Worst acc 0.0
+Elapsed: 02:06:39/03:27:56 Epoch 6 batch 200/2187	Avg acc 45.6, Worst acc 0.0
+Elapsed: 02:07:03/03:27:49 Epoch 6 batch 250/2187	Avg acc 44.5, Worst acc 0.0
+Elapsed: 02:07:28/03:27:44 Epoch 6 batch 300/2187	Avg acc 45.2, Worst acc 0.0
+Elapsed: 02:07:53/03:27:37 Epoch 6 batch 350/2187	Avg acc 44.8, Worst acc 0.0
+Elapsed: 02:08:19/03:27:33 Epoch 6 batch 400/2187	Avg acc 44.6, Worst acc 0.0
+Elapsed: 02:08:49/03:27:35 Epoch 6 batch 450/2187	Avg acc 45.0, Worst acc 0.0
+Elapsed: 02:09:17/03:27:35 Epoch 6 batch 500/2187	Avg acc 44.8, Worst acc 0.0
+Elapsed: 02:09:42/03:27:30 Epoch 6 batch 550/2187	Avg acc 44.6, Worst acc 0.0
+Elapsed: 02:10:10/03:27:29 Epoch 6 batch 600/2187	Avg acc 45.2, Worst acc 0.0
+Elapsed: 02:10:33/03:27:20 Epoch 6 batch 650/2187	Avg acc 44.5, Worst acc 0.0
+Elapsed: 02:10:56/03:27:11 Epoch 6 batch 700/2187	Avg acc 45.0, Worst acc 0.0
+Elapsed: 02:11:19/03:27:03 Epoch 6 batch 750/2187	Avg acc 44.9, Worst acc 0.0
+Elapsed: 02:11:42/03:26:55 Epoch 6 batch 800/2187	Avg acc 43.7, Worst acc 0.0
+Elapsed: 02:12:05/03:26:46 Epoch 6 batch 850/2187	Avg acc 44.6, Worst acc 0.0
+Elapsed: 02:12:27/03:26:36 Epoch 6 batch 900/2187	Avg acc 44.8, Worst acc 0.0
+Elapsed: 02:12:51/03:26:29 Epoch 6 batch 950/2187	Avg acc 44.9, Worst acc 0.0
+Elapsed: 02:13:14/03:26:21 Epoch 6 batch 1000/2187	Avg acc 45.6, Worst acc 0.0
+Elapsed: 02:13:36/03:26:12 Epoch 6 batch 1050/2187	Avg acc 45.3, Worst acc 0.0
+Elapsed: 02:14:06/03:26:14 Epoch 6 batch 1100/2187	Avg acc 45.2, Worst acc 0.0
+Elapsed: 02:14:32/03:26:11 Epoch 6 batch 1150/2187	Avg acc 45.4, Worst acc 0.0
+Elapsed: 02:15:01/03:26:11 Epoch 6 batch 1200/2187	Avg acc 45.6, Worst acc 0.0
+Elapsed: 02:15:25/03:26:06 Epoch 6 batch 1250/2187	Avg acc 43.1, Worst acc 0.0
+Elapsed: 02:15:48/03:25:58 Epoch 6 batch 1300/2187	Avg acc 45.6, Worst acc 0.0
+Elapsed: 02:16:13/03:25:51 Epoch 6 batch 1350/2187	Avg acc 44.9, Worst acc 0.0
+Elapsed: 02:16:36/03:25:45 Epoch 6 batch 1400/2187	Avg acc 45.4, Worst acc 0.0
+Elapsed: 02:17:01/03:25:39 Epoch 6 batch 1450/2187	Avg acc 44.1, Worst acc 0.0
+Elapsed: 02:17:28/03:25:37 Epoch 6 batch 1500/2187	Avg acc 43.8, Worst acc 0.0
+Elapsed: 02:17:51/03:25:30 Epoch 6 batch 1550/2187	Avg acc 45.3, Worst acc 0.0
+Elapsed: 02:18:15/03:25:23 Epoch 6 batch 1600/2187	Avg acc 44.2, Worst acc 0.0
+Elapsed: 02:18:36/03:25:14 Epoch 6 batch 1650/2187	Avg acc 45.0, Worst acc 0.0
+Elapsed: 02:18:58/03:25:04 Epoch 6 batch 1700/2187	Avg acc 45.1, Worst acc 0.0
+Elapsed: 02:19:19/03:24:53 Epoch 6 batch 1750/2187	Avg acc 44.8, Worst acc 0.0
+Elapsed: 02:19:40/03:24:44 Epoch 6 batch 1800/2187	Avg acc 45.5, Worst acc 0.0
+Elapsed: 02:20:01/03:24:33 Epoch 6 batch 1850/2187	Avg acc 44.7, Worst acc 0.0
+Elapsed: 02:20:23/03:24:23 Epoch 6 batch 1900/2187	Avg acc 44.1, Worst acc 0.0
+Elapsed: 02:20:44/03:24:13 Epoch 6 batch 1950/2187	Avg acc 45.3, Worst acc 0.0
+Elapsed: 02:21:05/03:24:04 Epoch 6 batch 2000/2187	Avg acc 45.8, Worst acc 0.0
+Elapsed: 02:21:28/03:23:56 Epoch 6 batch 2050/2187	Avg acc 44.8, Worst acc 0.0
+Elapsed: 02:21:51/03:23:48 Epoch 6 batch 2100/2187	Avg acc 43.7, Worst acc 0.0
+Elapsed: 02:22:15/03:23:44 Epoch 6 batch 2150/2187	Avg acc 43.7, Worst acc 0.0
+
+Epoch 6, Validation:
+Elapsed: 02:24:00/03:25:46 Epoch 6 batch 621/621	Avg acc 76.0, Worst acc 69.8
+N=12 0.7493539293110371 0.6649433434009552
+N=120 0.7600119411945343 0.6984071731567383
+N=600 0.7600119411945343 0.6984071731567383
+
+Epoch 6, Testing:
+Elapsed: 02:25:25/03:27:47 Epoch 6 batch 624/624	Avg acc 75.5, Worst acc 59.2
+N=12 0.7426801398396492 0.5567007005214691
+N=120 0.7545187026262283 0.5917513370513916
+N=600 0.7545187026262283 0.5917513370513916
+Current lr: 0.000100
+
+Elapsed: 02:25:49/03:27:39 Epoch 7 batch 50/2187	Avg acc 45.2, Worst acc 0.0
+Elapsed: 02:26:16/03:27:37 Epoch 7 batch 100/2187	Avg acc 45.2, Worst acc 0.0
+Elapsed: 02:26:43/03:27:35 Epoch 7 batch 150/2187	Avg acc 45.4, Worst acc 0.0
+Elapsed: 02:27:08/03:27:30 Epoch 7 batch 200/2187	Avg acc 45.0, Worst acc 0.0
+Elapsed: 02:27:35/03:27:28 Epoch 7 batch 250/2187	Avg acc 44.9, Worst acc 0.0
+Elapsed: 02:28:07/03:27:32 Epoch 7 batch 300/2187	Avg acc 45.8, Worst acc 0.0
+Elapsed: 02:28:34/03:27:31 Epoch 7 batch 350/2187	Avg acc 44.8, Worst acc 0.0
+Elapsed: 02:29:02/03:27:30 Epoch 7 batch 400/2187	Avg acc 45.5, Worst acc 0.0
+Elapsed: 02:29:28/03:27:27 Epoch 7 batch 450/2187	Avg acc 45.4, Worst acc 0.0
+Elapsed: 02:29:52/03:27:21 Epoch 7 batch 500/2187	Avg acc 45.5, Worst acc 0.0
+Elapsed: 02:30:20/03:27:19 Epoch 7 batch 550/2187	Avg acc 45.3, Worst acc 0.0
+Elapsed: 02:30:47/03:27:17 Epoch 7 batch 600/2187	Avg acc 45.9, Worst acc 0.0
+Elapsed: 02:31:14/03:27:15 Epoch 7 batch 650/2187	Avg acc 45.0, Worst acc 0.0
+Elapsed: 02:31:42/03:27:15 Epoch 7 batch 700/2187	Avg acc 45.0, Worst acc 0.0
+Elapsed: 02:32:07/03:27:11 Epoch 7 batch 750/2187	Avg acc 44.9, Worst acc 0.0
+Elapsed: 02:32:33/03:27:07 Epoch 7 batch 800/2187	Avg acc 45.2, Worst acc 0.0
+Elapsed: 02:32:58/03:27:02 Epoch 7 batch 850/2187	Avg acc 45.4, Worst acc 0.0
+Elapsed: 02:33:22/03:26:57 Epoch 7 batch 900/2187	Avg acc 45.3, Worst acc 0.0
+Elapsed: 02:33:44/03:26:48 Epoch 7 batch 950/2187	Avg acc 44.8, Worst acc 0.0
+Elapsed: 02:34:10/03:26:45 Epoch 7 batch 1000/2187	Avg acc 45.3, Worst acc 0.0
+Elapsed: 02:34:34/03:26:40 Epoch 7 batch 1050/2187	Avg acc 44.8, Worst acc 0.0
+Elapsed: 02:34:58/03:26:33 Epoch 7 batch 1100/2187	Avg acc 45.0, Worst acc 0.0
+Elapsed: 02:35:24/03:26:30 Epoch 7 batch 1150/2187	Avg acc 44.5, Worst acc 0.0
+Elapsed: 02:35:45/03:26:20 Epoch 7 batch 1200/2187	Avg acc 44.3, Worst acc 0.0
+Elapsed: 02:36:06/03:26:10 Epoch 7 batch 1250/2187	Avg acc 45.6, Worst acc 0.0
+Elapsed: 02:36:27/03:26:02 Epoch 7 batch 1300/2187	Avg acc 45.5, Worst acc 0.0
+Elapsed: 02:36:48/03:25:52 Epoch 7 batch 1350/2187	Avg acc 44.7, Worst acc 0.0
+Elapsed: 02:37:09/03:25:43 Epoch 7 batch 1400/2187	Avg acc 45.9, Worst acc 0.0
+Elapsed: 02:37:31/03:25:34 Epoch 7 batch 1450/2187	Avg acc 45.5, Worst acc 0.0
+Elapsed: 02:37:52/03:25:25 Epoch 7 batch 1500/2187	Avg acc 45.3, Worst acc 0.0
+Elapsed: 02:38:14/03:25:17 Epoch 7 batch 1550/2187	Avg acc 45.4, Worst acc 0.0
+Elapsed: 02:38:38/03:25:11 Epoch 7 batch 1600/2187	Avg acc 45.0, Worst acc 0.0
+Elapsed: 02:38:59/03:25:02 Epoch 7 batch 1650/2187	Avg acc 45.2, Worst acc 0.0
+Elapsed: 02:39:21/03:24:54 Epoch 7 batch 1700/2187	Avg acc 44.8, Worst acc 0.0
+Elapsed: 02:39:43/03:24:46 Epoch 7 batch 1750/2187	Avg acc 44.1, Worst acc 0.0
+Elapsed: 02:40:06/03:24:40 Epoch 7 batch 1800/2187	Avg acc 45.0, Worst acc 0.0
+Elapsed: 02:40:29/03:24:33 Epoch 7 batch 1850/2187	Avg acc 45.3, Worst acc 0.0
+Elapsed: 02:40:52/03:24:28 Epoch 7 batch 1900/2187	Avg acc 44.2, Worst acc 0.0
+Elapsed: 02:41:15/03:24:21 Epoch 7 batch 1950/2187	Avg acc 45.5, Worst acc 0.0
+Elapsed: 02:41:37/03:24:14 Epoch 7 batch 2000/2187	Avg acc 45.8, Worst acc 0.0
+Elapsed: 02:42:00/03:24:07 Epoch 7 batch 2050/2187	Avg acc 44.7, Worst acc 0.0
+Elapsed: 02:42:23/03:24:00 Epoch 7 batch 2100/2187	Avg acc 45.2, Worst acc 0.0
+Elapsed: 02:42:45/03:23:53 Epoch 7 batch 2150/2187	Avg acc 45.2, Worst acc 0.0
+
+Epoch 7, Validation:
+Elapsed: 02:44:48/03:26:03 Epoch 7 batch 621/621	Avg acc 73.7, Worst acc 62.2
+N=12 0.7145505401492119 0.5419537556171418
+N=120 0.7368408441543579 0.621926486492157
+N=600 0.7368408441543579 0.621926486492157
+
+Epoch 7, Testing:
+Elapsed: 02:46:36/03:28:17 Epoch 7 batch 624/624	Avg acc 72.6, Worst acc 52.2
+N=12 0.7044661611318588 0.4447522759437561
+N=120 0.7260755747556686 0.522104799747467
+N=600 0.7260755747556686 0.522104799747467
+Current lr: 0.000100
+
+Elapsed: 02:47:07/03:28:18 Epoch 8 batch 50/2187	Avg acc 45.7, Worst acc 0.0
+Elapsed: 02:47:42/03:28:27 Epoch 8 batch 100/2187	Avg acc 45.6, Worst acc 0.0
+Elapsed: 02:48:08/03:28:23 Epoch 8 batch 150/2187	Avg acc 45.8, Worst acc 0.0
+Elapsed: 02:48:32/03:28:17 Epoch 8 batch 200/2187	Avg acc 45.6, Worst acc 0.0
+Elapsed: 02:48:56/03:28:12 Epoch 8 batch 250/2187	Avg acc 45.5, Worst acc 0.0
+Elapsed: 02:49:20/03:28:07 Epoch 8 batch 300/2187	Avg acc 45.6, Worst acc 0.0
+Elapsed: 02:49:46/03:28:03 Epoch 8 batch 350/2187	Avg acc 46.0, Worst acc 0.0
+Elapsed: 02:50:12/03:28:01 Epoch 8 batch 400/2187	Avg acc 45.5, Worst acc 0.0
+Elapsed: 02:50:43/03:28:04 Epoch 8 batch 450/2187	Avg acc 44.8, Worst acc 0.0
+Elapsed: 02:51:09/03:28:00 Epoch 8 batch 500/2187	Avg acc 46.1, Worst acc 0.0
+Elapsed: 02:51:38/03:28:00 Epoch 8 batch 550/2187	Avg acc 44.9, Worst acc 0.0
+Elapsed: 02:52:08/03:28:03 Epoch 8 batch 600/2187	Avg acc 44.8, Worst acc 0.0
+Elapsed: 02:52:33/03:27:59 Epoch 8 batch 650/2187	Avg acc 46.3, Worst acc 0.0
+Elapsed: 02:52:54/03:27:49 Epoch 8 batch 700/2187	Avg acc 45.7, Worst acc 0.0
+Elapsed: 02:53:14/03:27:40 Epoch 8 batch 750/2187	Avg acc 46.1, Worst acc 0.0
+Elapsed: 02:53:35/03:27:30 Epoch 8 batch 800/2187	Avg acc 45.4, Worst acc 0.0
+Elapsed: 02:53:56/03:27:21 Epoch 8 batch 850/2187	Avg acc 45.3, Worst acc 0.0
+Elapsed: 02:54:16/03:27:12 Epoch 8 batch 900/2187	Avg acc 45.7, Worst acc 0.0
+Elapsed: 02:54:37/03:27:03 Epoch 8 batch 950/2187	Avg acc 45.9, Worst acc 0.0
+Elapsed: 02:54:58/03:26:54 Epoch 8 batch 1000/2187	Avg acc 45.5, Worst acc 0.0
+Elapsed: 02:55:19/03:26:45 Epoch 8 batch 1050/2187	Avg acc 46.0, Worst acc 0.0
+Elapsed: 02:55:40/03:26:36 Epoch 8 batch 1100/2187	Avg acc 45.9, Worst acc 0.0
+Elapsed: 02:56:03/03:26:30 Epoch 8 batch 1150/2187	Avg acc 45.2, Worst acc 0.0
+Elapsed: 02:56:25/03:26:23 Epoch 8 batch 1200/2187	Avg acc 45.5, Worst acc 0.0
+Elapsed: 02:56:48/03:26:17 Epoch 8 batch 1250/2187	Avg acc 45.5, Worst acc 0.0
+Elapsed: 02:57:11/03:26:10 Epoch 8 batch 1300/2187	Avg acc 45.5, Worst acc 0.0
+Elapsed: 02:57:32/03:26:03 Epoch 8 batch 1350/2187	Avg acc 45.8, Worst acc 0.0
+Elapsed: 02:57:55/03:25:55 Epoch 8 batch 1400/2187	Avg acc 45.3, Worst acc 0.0
+Elapsed: 02:58:16/03:25:47 Epoch 8 batch 1450/2187	Avg acc 46.0, Worst acc 0.0
+Elapsed: 02:58:38/03:25:41 Epoch 8 batch 1500/2187	Avg acc 45.5, Worst acc 0.0
+Elapsed: 02:59:00/03:25:33 Epoch 8 batch 1550/2187	Avg acc 45.9, Worst acc 0.0
+Elapsed: 02:59:21/03:25:25 Epoch 8 batch 1600/2187	Avg acc 45.5, Worst acc 0.0
+Elapsed: 02:59:43/03:25:18 Epoch 8 batch 1650/2187	Avg acc 45.8, Worst acc 0.0
+Elapsed: 03:00:04/03:25:09 Epoch 8 batch 1700/2187	Avg acc 45.8, Worst acc 0.0
+Elapsed: 03:00:26/03:25:02 Epoch 8 batch 1750/2187	Avg acc 46.0, Worst acc 0.0
+Elapsed: 03:00:50/03:24:58 Epoch 8 batch 1800/2187	Avg acc 44.4, Worst acc 0.0
+Elapsed: 03:01:14/03:24:54 Epoch 8 batch 1850/2187	Avg acc 45.5, Worst acc 0.0
+Elapsed: 03:01:37/03:24:47 Epoch 8 batch 1900/2187	Avg acc 44.8, Worst acc 0.0
+Elapsed: 03:02:00/03:24:42 Epoch 8 batch 1950/2187	Avg acc 46.2, Worst acc 0.0
+Elapsed: 03:02:23/03:24:37 Epoch 8 batch 2000/2187	Avg acc 45.0, Worst acc 0.0
+Elapsed: 03:02:48/03:24:33 Epoch 8 batch 2050/2187	Avg acc 45.9, Worst acc 0.0
+Elapsed: 03:03:10/03:24:27 Epoch 8 batch 2100/2187	Avg acc 45.2, Worst acc 0.0
+Elapsed: 03:03:32/03:24:20 Epoch 8 batch 2150/2187	Avg acc 45.8, Worst acc 0.0
+
+Epoch 8, Validation:
+Elapsed: 03:05:50/03:26:32 Epoch 8 batch 621/621	Avg acc 76.9, Worst acc 71.5
+N=12 0.7449681967496872 0.6456779575347901
+N=120 0.7685127705335617 0.7151299118995667
+N=600 0.7685127705335617 0.7151299118995667
+
+Epoch 8, Testing:
+Elapsed: 03:07:31/03:28:23 Epoch 8 batch 624/624	Avg acc 76.3, Worst acc 61.1
+N=12 0.749627246260643 0.5739295434951782
+N=120 0.7629929482936859 0.611015260219574
+N=600 0.7629929482936859 0.611015260219574
+Current lr: 0.000100
+
+Elapsed: 03:07:55/03:28:17 Epoch 9 batch 50/2187	Avg acc 45.8, Worst acc 0.0
+Elapsed: 03:08:22/03:28:14 Epoch 9 batch 100/2187	Avg acc 45.7, Worst acc 0.0
+Elapsed: 03:08:49/03:28:13 Epoch 9 batch 150/2187	Avg acc 45.4, Worst acc 0.0
+Elapsed: 03:09:16/03:28:11 Epoch 9 batch 200/2187	Avg acc 46.0, Worst acc 0.0
+Elapsed: 03:09:41/03:28:08 Epoch 9 batch 250/2187	Avg acc 46.9, Worst acc 0.0
+Elapsed: 03:10:10/03:28:08 Epoch 9 batch 300/2187	Avg acc 46.5, Worst acc 0.0
+Elapsed: 03:10:42/03:28:12 Epoch 9 batch 350/2187	Avg acc 46.2, Worst acc 0.0
+Elapsed: 03:11:07/03:28:08 Epoch 9 batch 400/2187	Avg acc 44.9, Worst acc 0.0
+Elapsed: 03:11:35/03:28:07 Epoch 9 batch 450/2187	Avg acc 44.8, Worst acc 0.0
+Elapsed: 03:12:02/03:28:05 Epoch 9 batch 500/2187	Avg acc 45.5, Worst acc 0.0
+Elapsed: 03:12:26/03:28:00 Epoch 9 batch 550/2187	Avg acc 45.2, Worst acc 0.0
+Elapsed: 03:12:50/03:27:55 Epoch 9 batch 600/2187	Avg acc 45.2, Worst acc 0.0
+Elapsed: 03:13:12/03:27:49 Epoch 9 batch 650/2187	Avg acc 46.2, Worst acc 0.0
+Elapsed: 03:13:34/03:27:42 Epoch 9 batch 700/2187	Avg acc 45.7, Worst acc 0.0
+Elapsed: 03:13:55/03:27:34 Epoch 9 batch 750/2187	Avg acc 45.9, Worst acc 0.0
+Elapsed: 03:14:16/03:27:26 Epoch 9 batch 800/2187	Avg acc 45.9, Worst acc 0.0
+Elapsed: 03:14:38/03:27:19 Epoch 9 batch 850/2187	Avg acc 45.4, Worst acc 0.0
+Elapsed: 03:14:59/03:27:12 Epoch 9 batch 900/2187	Avg acc 46.4, Worst acc 0.0
+Elapsed: 03:15:22/03:27:05 Epoch 9 batch 950/2187	Avg acc 45.9, Worst acc 0.0
+Elapsed: 03:15:44/03:26:59 Epoch 9 batch 1000/2187	Avg acc 46.5, Worst acc 0.0
+Elapsed: 03:16:06/03:26:52 Epoch 9 batch 1050/2187	Avg acc 46.3, Worst acc 0.0
+Elapsed: 03:16:27/03:26:44 Epoch 9 batch 1100/2187	Avg acc 45.2, Worst acc 0.0
+Elapsed: 03:16:49/03:26:37 Epoch 9 batch 1150/2187	Avg acc 45.1, Worst acc 0.0
+Elapsed: 03:17:14/03:26:34 Epoch 9 batch 1200/2187	Avg acc 44.6, Worst acc 0.0
+Elapsed: 03:17:35/03:26:26 Epoch 9 batch 1250/2187	Avg acc 45.5, Worst acc 0.0
+Elapsed: 03:17:57/03:26:20 Epoch 9 batch 1300/2187	Avg acc 46.1, Worst acc 0.0
+Elapsed: 03:18:22/03:26:16 Epoch 9 batch 1350/2187	Avg acc 45.5, Worst acc 0.0
+Elapsed: 03:18:46/03:26:12 Epoch 9 batch 1400/2187	Avg acc 46.2, Worst acc 0.0
+Elapsed: 03:19:07/03:26:05 Epoch 9 batch 1450/2187	Avg acc 45.9, Worst acc 0.0
+Elapsed: 03:19:29/03:25:58 Epoch 9 batch 1500/2187	Avg acc 45.9, Worst acc 0.0
+Elapsed: 03:19:52/03:25:52 Epoch 9 batch 1550/2187	Avg acc 45.8, Worst acc 0.0
+Elapsed: 03:20:14/03:25:46 Epoch 9 batch 1600/2187	Avg acc 45.8, Worst acc 0.0
+Elapsed: 03:20:37/03:25:40 Epoch 9 batch 1650/2187	Avg acc 45.6, Worst acc 0.0
+Elapsed: 03:20:59/03:25:35 Epoch 9 batch 1700/2187	Avg acc 45.2, Worst acc 0.0
+Elapsed: 03:21:24/03:25:31 Epoch 9 batch 1750/2187	Avg acc 45.8, Worst acc 0.0
+Elapsed: 03:21:46/03:25:24 Epoch 9 batch 1800/2187	Avg acc 45.8, Worst acc 0.0
+Elapsed: 03:22:11/03:25:21 Epoch 9 batch 1850/2187	Avg acc 46.4, Worst acc 0.0
+Elapsed: 03:22:35/03:25:17 Epoch 9 batch 1900/2187	Avg acc 45.9, Worst acc 0.0
+Elapsed: 03:22:59/03:25:13 Epoch 9 batch 1950/2187	Avg acc 45.6, Worst acc 0.0
+Elapsed: 03:23:21/03:25:07 Epoch 9 batch 2000/2187	Avg acc 45.9, Worst acc 0.0
+Elapsed: 03:23:48/03:25:06 Epoch 9 batch 2050/2187	Avg acc 45.5, Worst acc 0.0
+Elapsed: 03:24:11/03:25:00 Epoch 9 batch 2100/2187	Avg acc 45.3, Worst acc 0.0
+Elapsed: 03:24:33/03:24:54 Epoch 9 batch 2150/2187	Avg acc 45.6, Worst acc 0.0
+
+Epoch 9, Validation:
+Elapsed: 03:26:34/03:26:36 Epoch 9 batch 621/621	Avg acc 76.2, Worst acc 66.7
+N=12 0.7479568237066269 0.6238065719604492
+N=120 0.7603736142814159 0.6619296491146087
+N=600 0.7621474415063858 0.6673758029937744
+
+Epoch 9, Testing:
+Elapsed: 03:28:11/03:28:13 Epoch 9 batch 624/624	Avg acc 75.9, Worst acc 61.7
+N=12 0.7401205482706428 0.5555347536504268
+N=120 0.7591969817876816 0.6174364686012268
+N=600 0.7591969817876816 0.6174364686012268
+Current lr: 0.000100
+

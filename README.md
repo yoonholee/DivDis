@@ -7,6 +7,7 @@ Code for the paper "Diversify and Disambiguate: Learning From Underspecified Dat
   <img align="middle" src="./assets/fig1.png" alt="Main figure"/>
 </p>
 
+The main repulsion loss for DivDis is implemented in `divdis.py` in the root directory, and shared by all experiments.
 
 ## Citation
 

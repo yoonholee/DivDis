@@ -1,0 +1,32 @@
+
+
+Sorting for regex='logs/final_results_10-10/*_test.csv'
+
+
+Standard Performance (Avg Acc, Worst Acc):
+
+Sorted by worst (Average acc, Worst-group acc)
+CELEBA_1_div_h2_mi-mean-10.00_kl_backward-0.00_maj_bs32_lr0.0001                	3  0.910 +- 0.004    0.859 +- 0.010
+CELEBA_1_div_h2_mi-mean-10.00_kl_backward-10.00_maj_bs32_lr0.0001               	3  0.908 +- 0.004    0.856 +- 0.011
+CUB_div_h2_mi-mean-10.00_kl_backward-10.00_maj                                  	3  0.876 +- 0.014    0.824 +- 0.019
+CUB_div_h2_mi-mean-10.00_kl_backward-0.00_maj                                   	3  0.872 +- 0.008    0.775 +- 0.047
+CELEBA_4_div_h2_mi-mean-10.00_kl_backward-10.00_maj_bs32_lr0.0001               	3  0.848 +- 0.004    0.735 +- 0.026
+CELEBA_2_div_h2_mi-mean-10.00_kl_backward-0.00_maj_bs32_lr0.0001                	3  0.797 +- 0.004    0.693 +- 0.019
+CELEBA_2_div_h2_mi-mean-10.00_kl_backward-10.00_maj_bs32_lr0.0001               	3  0.795 +- 0.002    0.685 +- 0.017
+CELEBA_4_div_h2_mi-mean-10.00_kl_backward-0.00_maj_bs32_lr0.0001                	3  0.847 +- 0.005    0.674 +- 0.018
+CELEBA_3_div_h2_mi-mean-10.00_kl_backward-10.00_maj_bs32_lr0.0001               	3  0.806 +- 0.004    0.671 +- 0.019
+CELEBA_3_div_h2_mi-mean-10.00_kl_backward-0.00_maj_bs32_lr0.0001                	3  0.795 +- 0.006    0.620 +- 0.026
+
+
+Sorting for regex='logs/final_results_100-10/*_test.csv'
+
+
+Standard Performance (Avg Acc, Worst Acc):
+
+Sorted by worst (Average acc, Worst-group acc)
+CELEBA_1_div_h2_mi-mean-100.00_kl_backward-10.00_maj_bs32_lr0.0001              	3  0.914 +- 0.003    0.871 +- 0.010
+CELEBA_2_div_h2_mi-mean-100.00_kl_backward-10.00_maj_bs32_lr0.0001              	3  0.804 +- 0.002    0.738 +- 0.028
+CUB_div_h2_mi-mean-100.00_kl_backward-10.00_maj                                 	3  0.847 +- 0.006    0.690 +- 0.087
+CELEBA_3_div_h2_mi-mean-100.00_kl_backward-10.00_maj_bs32_lr0.0001              	3  0.795 +- 0.019    0.665 +- 0.043
+CELEBA_4_div_h2_mi-mean-100.00_kl_backward-10.00_maj_bs32_lr0.0001              	3  0.847 +- 0.006    0.649 +- 0.014
+CUB_div_h2_mi-mean-100.00_kl_backward-0.00_maj                                  	3  0.798 +- 0.028    0.416 +- 0.129
