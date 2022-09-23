@@ -99,7 +99,7 @@ for t in range(train_iter):
         plot(t)
 
     if t % log_every == 0:
-        print(f"{t=} xent {xent.item():.5f} aux {repulsion_loss.item():.5f}")
+        print(f"{t} xent {xent.item():.5f} aux {repulsion_loss.item():.5f}")
 
 #%% Train single ERM model (for comparison in learning curve)
 net = nn.Sequential(
@@ -125,7 +125,7 @@ for t in range(train_iter):
         metrics[f"ERM_acc_{i}"].append(acc_i.item())
         print(acc_i.item())
     if t % log_every == 0:
-        print(f"{t=} xent {xent.item():.5f}")
+        print(f"{t} xent {xent.item():.5f}")
 
 #%% Draw learning curves
 def draw_full_curve(t=None, with_erm=False):

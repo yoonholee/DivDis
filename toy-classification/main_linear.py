@@ -109,7 +109,7 @@ for t in range(args.train_iter + 1):
     opt.step()
 
     if t % args.log_every == 0:
-        print(f"{t=} xent {xent.item():.5f} aux {repulsion_loss.item():.5f}")
+        print(f"{t} xent {xent.item():.5f} aux {repulsion_loss.item():.5f}")
 
     times = sorted([2**n for n in range(15)] + [1000 * n for n in range(200)])
     times = [t for t in times if t < args.train_iter and t > 0]
@@ -148,9 +148,9 @@ for t in range(args.train_iter + 1):
         ax = plt.gca()
         ax.axes.xaxis.set_visible(False)
         ax.axes.yaxis.set_visible(False)
-        savefig(f"linear/{exp_name}_{t=}")
+        savefig(f"linear/{exp_name}_{t}")
 
-filenames = [f"figures/linear/{exp_name}_{t=}.png" for t in times]
+filenames = [f"figures/linear/{exp_name}_{t}.png" for t in times]
 images = [imageio.imread(filename) for filename in filenames]
 os.makedirs("gifs", exist_ok=True)
 imageio.mimsave(f"gifs/{exp_name}.gif", images)
