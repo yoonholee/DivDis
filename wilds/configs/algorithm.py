@@ -1,0 +1,111 @@
+algorithm_defaults = {
+    "ERM": {
+        "train_loader": "standard",
+        "uniform_over_groups": False,
+        "eval_loader": "standard",
+        "randaugment_n": 2,  # When running ERM + data augmentation
+    },
+    "groupDRO": {
+        "train_loader": "standard",
+        "uniform_over_groups": True,
+        "distinct_groups": True,
+        "eval_loader": "standard",
+        "group_dro_step_size": 0.01,
+    },
+    "deepCORAL": {
+        "train_loader": "group",
+        "uniform_over_groups": True,
+        "distinct_groups": True,
+        "eval_loader": "standard",
+        "coral_penalty_weight": 1.0,
+        "randaugment_n": 2,
+        "additional_train_transform": "randaugment",  # Apply strong augmentation to labeled & unlabeled examples
+    },
+    "IRM": {
+        "train_loader": "group",
+        "uniform_over_groups": True,
+        "distinct_groups": True,
+        "eval_loader": "standard",
+        "irm_lambda": 100.0,
+        "irm_penalty_anneal_iters": 500,
+    },
+    "DANN": {
+        "train_loader": "group",
+        "uniform_over_groups": True,
+        "distinct_groups": True,
+        "eval_loader": "standard",
+        "randaugment_n": 2,
+        "additional_train_transform": "randaugment",  # Apply strong augmentation to labeled & unlabeled examples
+    },
+    "AFN": {
+        "train_loader": "standard",
+        "uniform_over_groups": False,
+        "eval_loader": "standard",
+        "use_hafn": False,
+        "afn_penalty_weight": 0.01,
+        "safn_delta_r": 1.0,
+        "hafn_r": 1.0,
+        "additional_train_transform": "randaugment",  # Apply strong augmentation to labeled & unlabeled examples
+        "randaugment_n": 2,
+    },
+    "FixMatch": {
+        "train_loader": "standard",
+        "uniform_over_groups": False,
+        "eval_loader": "standard",
+        "self_training_lambda": 1,
+        "self_training_threshold": 0.7,
+        "scheduler": "FixMatchLR",
+        "randaugment_n": 2,
+        "additional_train_transform": "randaugment",  # Apply strong augmentation to labeled examples
+    },
+    "PseudoLabel": {
+        "train_loader": "standard",
+        "uniform_over_groups": False,
+        "eval_loader": "standard",
+        "self_training_lambda": 1,
+        "self_training_threshold": 0.7,
+        "pseudolabel_T2": 0.4,
+        "scheduler": "FixMatchLR",
+        "randaugment_n": 2,
+        "additional_train_transform": "randaugment",  # Apply strong augmentation to labeled & unlabeled examples
+    },
+    "NoisyStudent": {
+        "train_loader": "standard",
+        "uniform_over_groups": False,
+        "eval_loader": "standard",
+        "noisystudent_add_dropout": True,
+        "noisystudent_dropout_rate": 0.5,
+        "scheduler": "FixMatchLR",
+        "randaugment_n": 2,
+        "additional_train_transform": "randaugment",  # Apply strong augmentation to labeled & unlabeled examples
+    },
+    "DivDis": {
+        "train_loader": "standard",
+        "uniform_over_groups": False,
+        "eval_loader": "standard",
+        "divdis_heads": 2,
+        "divdis_diversity_weight": 0.01,
+        "randaugment_n": 2,
+        "additional_train_transform": "randaugment",  # Apply strong augmentation to labeled examples
+    },
+    "LatentDivDis": {
+        "train_loader": "standard",
+        "uniform_over_groups": False,
+        "eval_loader": "standard",
+        "randaugment_n": 2,
+        "additional_train_transform": "randaugment",  # Apply strong augmentation to labeled examples
+        "l_divdis_zdim": 2,
+        "l_divdis_cls_width": 128,
+        "l_divdis_cls_depth": 2,
+        "l_divdis_inf_width": 128,
+        "l_divdis_inf_depth": 2,
+        "l_divdis_reconst_weight": 1.0,
+    },
+    "BN": {
+        "train_loader": "standard",
+        "uniform_over_groups": False,
+        "eval_loader": "standard",
+        "randaugment_n": 2,
+        "additional_train_transform": "randaugment",  # Apply strong augmentation to labeled examples
+    },
+}
