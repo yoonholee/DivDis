@@ -38,7 +38,7 @@ def get_vals(val_csvs, test_csvs, keys, run_slice=None):
 
 
 def summarize(regex):
-    logger.info(f"\n\nSorting for {regex=}")
+    logger.info(f"\n\nSorting for {regex}")
     filenames = glob.glob(regex)
     exp_settings = [
         (int(re.search("h[0-9]+", os.path.basename(fn)).group()[1:]), fn[:-9])

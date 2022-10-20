@@ -85,7 +85,7 @@ class DivDisLoss(nn.Module):
             dists = dists.sum(dim=-1).mean(dim=0)
             repulsion_grid = dists
         else:
-            raise ValueError(f"{mode=} not implemented!")
+            raise ValueError(f"{mode} not implemented!")
 
         if reduction == "mean":  # This was used in the paper
             repulsion_grid = torch.triu(repulsion_grid, diagonal=1)
@@ -99,6 +99,6 @@ class DivDisLoss(nn.Module):
             row_mins = [row[row.nonzero(as_tuple=True)].min() for row in rows]
             repulsion_loss = -torch.stack(row_mins).mean()
         else:
-            raise ValueError(f"{reduction=} not implemented!")
+            raise ValueError(f"{reduction} not implemented!")
 
         return repulsion_loss

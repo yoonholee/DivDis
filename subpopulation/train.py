@@ -101,7 +101,7 @@ def run_epoch_divdis_eval(
         # Active querying
         active_idxs = disagreement_order[:N]
         act_avg_acc, act_worst_acc = get_avg_and_worst_accs(active_idxs)
-        logger.write(f"{N=} active query {act_avg_acc} {act_worst_acc}\n")
+        logger.write(f"{N} active query {act_avg_acc} {act_worst_acc}\n")
 
         # Random querying
         avg_results, worst_results = [], []
@@ -110,7 +110,7 @@ def run_epoch_divdis_eval(
             avg_acc, worst_acc = get_avg_and_worst_accs(rand_idxs)
             avg_results.append(avg_acc)
             worst_results.append(worst_acc)
-        logger.write(f"{N=} random query {np.mean(avg_results)} {np.mean(worst_results)}\n")
+        logger.write(f"{N} random query {np.mean(avg_results)} {np.mean(worst_results)}\n")
 
 
 def run_epoch_divdis_train(
@@ -219,7 +219,7 @@ def run_epoch_divdis_train(
                 kl = torch.distributions.kl.kl_divergence(dist_target, dist_source)
             reg_loss = kl.mean()
         else:
-            raise ValueError(f"{args.reg_mode=} not implemented!")
+            raise ValueError(f"{args.reg_mode} not implemented!")
         loss_main += reg_loss * args.reg_weight
 
         if "bert" in args.model:
