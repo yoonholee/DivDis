@@ -19,7 +19,8 @@ from loss import LossComputer
 sys.path.insert(1, os.path.join(sys.path[0], ".."))
 from divdis import DivDisLoss
 
-device = torch.device("cuda")
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
 
 
 def sec_to_str(t):
@@ -43,8 +44,8 @@ def run_epoch_divdis_eval(
         y_cp, g_cp = copy.deepcopy(y), copy.deepcopy(g)
         del y, g
         y, g = y_cp, g_cp
-        x, y, g = x.cuda(), y.cuda(), g.cuda()
-        y_alt = (g % 2).cuda()
+        x, y, g = x.to(device), y.to(device), g.to(device)
+        y_alt = (g % 2).to(device)
 
         yhat = model(x)
         yhat_chunked = torch.chunk(yhat, args.heads, dim=-1)
@@ -155,10 +156,10 @@ def run_epoch_divdis_train(
         y_cp, g_cp = copy.deepcopy(y), copy.deepcopy(g)
         del y, g
         y, g = y_cp, g_cp
-        x, y, g = x.cuda(), y.cuda(), g.cuda()
-        y_alt = (g % 2).cuda()
+        x, y, g = x.to(device), y.to(device), g.to(device)
+        y_alt = (g % 2).to(device)
         x_unlabeled, *_ = batch_unlabeled
-        x_unlabeled = x_unlabeled.cuda()
+        x_unlabeled = x_unlabeled.to(device)
 
         if args.bn_mode == "train":
             yhat = model(x)
@@ -294,7 +295,7 @@ def run_epoch(
             y_cp, g_cp = copy.deepcopy(y), copy.deepcopy(g)
             del y, g
             y, g = y_cp, g_cp
-            x, y, g = x.cuda(), y.cuda(), g.cuda()
+            x, y, g = x.to(device), y.to(device), g.to(device)
             y_onehot = None
 
             outputs = model(x)
@@ -340,7 +341,7 @@ def train(
     args,
     epoch_offset,
 ):
-    model = model.cuda()
+    model = model.to(device)
 
     # process generalization adjustment stuff
     adjustments = [float(c) for c in args.generalization_adjustment.split(",")]

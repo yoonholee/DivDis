@@ -15,6 +15,8 @@ from utils import savefig
 sys.path.insert(1, os.path.join(sys.path[0], ".."))
 from divdis import DivDisLoss
 
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
 os.makedirs("figures/linear", exist_ok=True)
 SEED = 42
 torch.manual_seed(SEED)
@@ -85,21 +87,21 @@ args.noise_level = 0.0
 exp_name = f"linear_h{args.heads}_{args.mode}-{args.reduction}w{args.aux_weight}"
 print(exp_name)
 
-net = nn.Linear(2, args.heads, bias=True).cuda()
+net = nn.Linear(2, args.heads, bias=True).to(device)
 opt = torch.optim.Adam(net.parameters(), lr=args.lr)
 loss_fn = DivDisLoss(heads=args.heads, mode=args.mode, reduction=args.reduction)
 
 
 for t in range(args.train_iter + 1):
     x, y = sample_minibatch(training_data, args.batch_size)
-    x, y = x.cuda(), y.cuda()
+    x, y = x.to(device), y.to(device)
     logits = net(x)
     logits_chunked = torch.chunk(logits, args.heads, dim=-1)
     losses = [F.binary_cross_entropy_with_logits(logit, y) for logit in logits_chunked]
     xent = sum(losses)
 
     target_x, _ = sample_minibatch(test_data, args.test_batch_size)
-    target_x = target_x.cuda()
+    target_x = target_x.to(device)
     target_logits = net(target_x)
     repulsion_loss = loss_fn(target_logits)
 
