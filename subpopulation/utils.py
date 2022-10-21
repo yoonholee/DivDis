@@ -6,6 +6,7 @@ import csv
 import argparse
 import torch.nn as nn
 
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 class Identity(nn.Module):
     """An identity layer"""
@@ -134,7 +135,7 @@ def accuracy(output, target, topk=(1,)):
     _, pred = output.topk(maxk, 1, True, True)
     pred = pred.t()
     temp = target.view(1, -1).expand_as(pred)
-    temp = temp.cuda()
+    temp = temp.to(device)
     correct = pred.eq(temp)
 
     res = []

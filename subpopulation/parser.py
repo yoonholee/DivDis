@@ -5,7 +5,9 @@ from datetime import datetime
 from data.data import dataset_attributes, shift_types
 from models import model_attributes
 from utils import ParseKwargs
+import torch
 
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 def check_args(args):
     if args.shift_type == "confounder":
@@ -25,6 +27,7 @@ def get_args():
         "-d", "--dataset", choices=dataset_attributes.keys(), default="CMNIST"
     )
     parser.add_argument("-s", "--shift_type", choices=shift_types, default="confounder")
+
     # Confounders
     parser.add_argument("-t", "--target_name", default="waterbird_complete95")
     parser.add_argument(
@@ -78,7 +81,6 @@ def get_args():
         "--bn_mode", type=str, default="train", choices=["eval", "train", "mix"]
     )
     parser.add_argument("--heads", type=int, default=4)
-
     parser.add_argument("--mode", type=str, default="mi")
     parser.add_argument("--reduction", type=str, default="mean")
     parser.add_argument("--diversity_weight", type=float, default=10.0)

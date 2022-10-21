@@ -6,6 +6,7 @@ import torch
 from wilds.common.metrics.metric import Metric
 from wilds.common.utils import minimum
 
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 class F1(Metric):
     def __init__(self, prediction_fn=None, name=None, average="binary"):
@@ -65,7 +66,7 @@ class LossComputer:
             print("Loss n groups:", self.n_groups)
 
         try:
-            self.group_counts = dataset.group_counts().cuda()
+            self.group_counts = dataset.group_counts().to(device)
         except:
             # for CIFAR10, manually defined group_counts by wy
             self.group_counts = dataset.group_counts
@@ -73,17 +74,17 @@ class LossComputer:
         self.group_str = dataset.group_str
 
         if adj is not None:
-            self.adj = torch.from_numpy(adj).float().cuda()
+            self.adj = torch.from_numpy(adj).float().to(device)
         else:
-            self.adj = torch.zeros(self.n_groups).float().cuda()
+            self.adj = torch.zeros(self.n_groups).float().to(device)
 
         if is_robust:
             assert alpha, "alpha must be specified"
 
         # quantities maintained throughout training
-        self.adv_probs = torch.ones(self.n_groups).cuda() / self.n_groups
-        self.exp_avg_loss = torch.zeros(self.n_groups).cuda()
-        self.exp_avg_initialized = torch.zeros(self.n_groups).byte().cuda()
+        self.adv_probs = torch.ones(self.n_groups).to(device) / self.n_groups
+        self.exp_avg_loss = torch.zeros(self.n_groups).to(device)
+        self.exp_avg_initialized = torch.zeros(self.n_groups).byte().to(device)
 
         self.reset_stats()
 
@@ -163,7 +164,7 @@ class LossComputer:
     def compute_group_avg(self, losses, group_idx):
         # compute observed counts and mean loss for each group
         group_map = (
-            group_idx == torch.arange(self.n_groups).unsqueeze(1).long().cuda()
+            group_idx == torch.arange(self.n_groups).unsqueeze(1).long().to(device)
         ).float()
         group_count = group_map.sum(1)
         group_denom = group_count + (group_count == 0).float()  # avoid nans
@@ -179,11 +180,11 @@ class LossComputer:
         self.exp_avg_initialinpzed = (self.exp_avg_initialized > 0) + (group_count > 0)
 
     def reset_stats(self):
-        self.processed_data_counts = torch.zeros(self.n_groups).cuda()
-        self.update_data_counts = torch.zeros(self.n_groups).cuda()
-        self.update_batch_counts = torch.zeros(self.n_groups).cuda()
-        self.avg_group_loss = torch.zeros(self.n_groups).cuda()
-        self.avg_group_acc = torch.zeros(self.n_groups).cuda()
+        self.processed_data_counts = torch.zeros(self.n_groups).to(device)
+        self.update_data_counts = torch.zeros(self.n_groups).to(device)
+        self.update_batch_counts = torch.zeros(self.n_groups).to(device)
+        self.avg_group_loss = torch.zeros(self.n_groups).to(device)
+        self.avg_group_acc = torch.zeros(self.n_groups).to(device)
         self.avg_per_sample_loss = 0.0
         self.avg_actual_loss = 0.0
         self.avg_acc = 0.0

@@ -19,7 +19,8 @@ from loss import LossComputer
 sys.path.insert(1, os.path.join(sys.path[0], ".."))
 from divdis import DivDisLoss
 
-device = torch.device("cuda")
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
 
 
 def sec_to_str(t):
@@ -43,8 +44,8 @@ def run_epoch_divdis_eval(
         y_cp, g_cp = copy.deepcopy(y), copy.deepcopy(g)
         del y, g
         y, g = y_cp, g_cp
-        x, y, g = x.cuda(), y.cuda(), g.cuda()
-        y_alt = (g % 2).cuda()
+        x, y, g = x.to(device), y.to(device), g.to(device)
+        y_alt = (g % 2).to(device)
 
         yhat = model(x)
         yhat_chunked = torch.chunk(yhat, args.heads, dim=-1)
@@ -101,7 +102,7 @@ def run_epoch_divdis_eval(
         # Active querying
         active_idxs = disagreement_order[:N]
         act_avg_acc, act_worst_acc = get_avg_and_worst_accs(active_idxs)
-        logger.write(f"{N=} active query {act_avg_acc} {act_worst_acc}\n")
+        logger.write(f"{N} active query {act_avg_acc} {act_worst_acc}\n")
 
         # Random querying
         avg_results, worst_results = [], []
@@ -110,7 +111,7 @@ def run_epoch_divdis_eval(
             avg_acc, worst_acc = get_avg_and_worst_accs(rand_idxs)
             avg_results.append(avg_acc)
             worst_results.append(worst_acc)
-        logger.write(f"{N=} random query {np.mean(avg_results)} {np.mean(worst_results)}\n")
+        logger.write(f"{N} random query {np.mean(avg_results)} {np.mean(worst_results)}\n")
 
 
 def run_epoch_divdis_train(
@@ -155,10 +156,10 @@ def run_epoch_divdis_train(
         y_cp, g_cp = copy.deepcopy(y), copy.deepcopy(g)
         del y, g
         y, g = y_cp, g_cp
-        x, y, g = x.cuda(), y.cuda(), g.cuda()
-        y_alt = (g % 2).cuda()
+        x, y, g = x.to(device), y.to(device), g.to(device)
+        y_alt = (g % 2).to(device)
         x_unlabeled, *_ = batch_unlabeled
-        x_unlabeled = x_unlabeled.cuda()
+        x_unlabeled = x_unlabeled.to(device)
 
         if args.bn_mode == "train":
             yhat = model(x)
@@ -219,7 +220,7 @@ def run_epoch_divdis_train(
                 kl = torch.distributions.kl.kl_divergence(dist_target, dist_source)
             reg_loss = kl.mean()
         else:
-            raise ValueError(f"{args.reg_mode=} not implemented!")
+            raise ValueError(f"{args.reg_mode} not implemented!")
         loss_main += reg_loss * args.reg_weight
 
         if "bert" in args.model:
@@ -294,7 +295,7 @@ def run_epoch(
             y_cp, g_cp = copy.deepcopy(y), copy.deepcopy(g)
             del y, g
             y, g = y_cp, g_cp
-            x, y, g = x.cuda(), y.cuda(), g.cuda()
+            x, y, g = x.to(device), y.to(device), g.to(device)
             y_onehot = None
 
             outputs = model(x)
@@ -340,7 +341,7 @@ def train(
     args,
     epoch_offset,
 ):
-    model = model.cuda()
+    model = model.to(device)
 
     # process generalization adjustment stuff
     adjustments = [float(c) for c in args.generalization_adjustment.split(",")]

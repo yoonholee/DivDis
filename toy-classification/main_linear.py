@@ -15,6 +15,8 @@ from utils import savefig
 sys.path.insert(1, os.path.join(sys.path[0], ".."))
 from divdis import DivDisLoss
 
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
 os.makedirs("figures/linear", exist_ok=True)
 SEED = 42
 torch.manual_seed(SEED)
@@ -85,21 +87,21 @@ args.noise_level = 0.0
 exp_name = f"linear_h{args.heads}_{args.mode}-{args.reduction}w{args.aux_weight}"
 print(exp_name)
 
-net = nn.Linear(2, args.heads, bias=True).cuda()
+net = nn.Linear(2, args.heads, bias=True).to(device)
 opt = torch.optim.Adam(net.parameters(), lr=args.lr)
 loss_fn = DivDisLoss(heads=args.heads, mode=args.mode, reduction=args.reduction)
 
 
 for t in range(args.train_iter + 1):
     x, y = sample_minibatch(training_data, args.batch_size)
-    x, y = x.cuda(), y.cuda()
+    x, y = x.to(device), y.to(device)
     logits = net(x)
     logits_chunked = torch.chunk(logits, args.heads, dim=-1)
     losses = [F.binary_cross_entropy_with_logits(logit, y) for logit in logits_chunked]
     xent = sum(losses)
 
     target_x, _ = sample_minibatch(test_data, args.test_batch_size)
-    target_x = target_x.cuda()
+    target_x = target_x.to(device)
     target_logits = net(target_x)
     repulsion_loss = loss_fn(target_logits)
 
@@ -109,7 +111,7 @@ for t in range(args.train_iter + 1):
     opt.step()
 
     if t % args.log_every == 0:
-        print(f"{t=} xent {xent.item():.5f} aux {repulsion_loss.item():.5f}")
+        print(f"{t} xent {xent.item():.5f} aux {repulsion_loss.item():.5f}")
 
     times = sorted([2**n for n in range(15)] + [1000 * n for n in range(200)])
     times = [t for t in times if t < args.train_iter and t > 0]
@@ -148,9 +150,9 @@ for t in range(args.train_iter + 1):
         ax = plt.gca()
         ax.axes.xaxis.set_visible(False)
         ax.axes.yaxis.set_visible(False)
-        savefig(f"linear/{exp_name}_{t=}")
+        savefig(f"linear/{exp_name}_{t}")
 
-filenames = [f"figures/linear/{exp_name}_{t=}.png" for t in times]
+filenames = [f"figures/linear/{exp_name}_{t}.png" for t in times]
 images = [imageio.imread(filename) for filename in filenames]
 os.makedirs("gifs", exist_ok=True)
 imageio.mimsave(f"gifs/{exp_name}.gif", images)

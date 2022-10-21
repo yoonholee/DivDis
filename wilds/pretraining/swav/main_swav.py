@@ -15,9 +15,7 @@
 import argparse
 import math
 import os
-import pdb
 import shutil
-import sys
 import time
 from logging import getLogger
 
@@ -62,6 +60,7 @@ from examples.utils import initialize_wandb
 
 logger = getLogger()
 parser = argparse.ArgumentParser(description="Implementation of SwAV")
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 #########################
 ##### dataset params ####
@@ -319,7 +318,7 @@ def main():
         )
         model = apex.parallel.convert_syncbn_model(model, process_group=process_group)
     # copy model to GPU
-    model = model.cuda()
+    model = model.to(device)
     if args.rank == 0:
         logger.info(model)
     logger.info("Building model done.")
@@ -397,7 +396,7 @@ def main():
                 len(args.crops_for_assign),
                 args.queue_length // args.world_size,
                 args.feat_dim,
-            ).cuda()
+            ).to(device)
 
         # train the network
         scores, queue = train(train_loader, model, optimizer, epoch, lr_schedule, queue)

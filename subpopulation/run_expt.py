@@ -100,7 +100,7 @@ def main():
                 majority_groups = (0, 1, 2, 4)
         else:
             raise ValueError(
-                f"Majority-only loader is not implemented for {args.dataset=}!"
+                f"Majority-only loader is not implemented for {args.dataset}!"
             )
         majority_idxs = [
             np.where(train_data.get_group_array() == i)[0] for i in majority_groups
